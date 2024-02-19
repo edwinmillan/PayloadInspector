@@ -22,3 +22,7 @@ async def print_payload(payload: dict):
         return {"message": f"Payload received: {filename}"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", port=8000, log_level="info", reload=True)
