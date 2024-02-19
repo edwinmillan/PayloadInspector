@@ -1,5 +1,5 @@
 import json
-import pendulum
+import time
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 
@@ -12,7 +12,7 @@ log_dir.mkdir(parents=True, exist_ok=True)
 @app.post("/payload")
 async def print_payload(payload: dict):
     try:
-        timestamp = pendulum.now().int_timestamp
+        timestamp = int(time.time())
         filename = f"payload_{timestamp}.json"
         filepath = log_dir / filename
         with open(filepath, "w") as file:

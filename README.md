@@ -17,6 +17,5 @@ Have them send to this endpoint and check the `app/logs` dir.
 2. `pip install -r requirements.txt`
 
 # Running
-1. Change info in `hypercorn_config.toml` as needed.
-2. `hypercorn -c .\hypercorn_config.toml app.main:app` 
-3. Point webhook or do an api call to `<host_ip>:<chosen port>/payload` example; `192.168.1.20:8000/payload`
+1. `uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload` 
+2. Point webhook or do an api call to `<host_ip>:<chosen port>/payload` example; `192.168.1.20:8000/payload`
