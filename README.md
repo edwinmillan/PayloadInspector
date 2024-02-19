@@ -10,7 +10,7 @@ Have them send to this endpoint and check the `app/logs` dir.
 
 
 # Installing with Poetry
-1. `poetry install`
+1. `poetry install --no-root`
 
 # Installing with pip
 1. `venv of your choice`
