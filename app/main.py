@@ -23,6 +23,14 @@ async def print_payload(payload: dict):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", port=8000, log_level="info", reload=True)
+    import asyncio
+
+    async def main():
+        config = uvicorn.Config("main:app", port=8000, log_level="info", reload=True)
+        server = uvicorn.Server(config)
+        await server.serve()
+
+    asyncio.run(main())
