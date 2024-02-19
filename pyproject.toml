@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "payloadinspector"
+version = "0.1.0"
+description = ""
+authors = ["Edwin Millan <bassgs3000@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.109.2"
+hypercorn = "^0.16.0"
+pendulum = "^3.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
